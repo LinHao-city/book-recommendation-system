@@ -1,0 +1,852 @@
+/* 企业级图书详情页样式 - 现代化重设计 */
+
+/* ========== 全局布局与视觉体系 ========== */
+.book-detail-page {
+  padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fafbfc;
+  position: relative;
+}
+
+/* 背景装饰 */
+.book-detail-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.08;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ========== 面包屑导航 - 精致设计 ========== */
+.book-breadcrumb {
+  margin: 0;
+  padding: 24px 32px 16px;
+  background: transparent;
+  border: none;
+}
+
+.book-breadcrumb .ant-breadcrumb {
+  font-size: 14px;
+}
+
+.book-breadcrumb .ant-breadcrumb-link {
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.book-breadcrumb .ant-breadcrumb-link:hover {
+  color: #667eea;
+}
+
+.book-breadcrumb .ant-breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+/* ========== 主容器布局 ========== */
+.book-detail-container {
+  padding: 0 32px 32px;
+}
+
+.book-detail-main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* ========== 图书封面卡片 - 立体设计 ========== */
+.book-cover-section {
+  position: sticky;
+  top: 32px;
+  height: fit-content;
+}
+
+.book-image-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-image-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 32px 64px -12px rgba(102, 126, 234, 0.25),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.book-image-container {
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+}
+
+.book-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  opacity: 0.8;
+}
+
+.book-cover-image {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.15),
+    0 2px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-cover-image:hover {
+  transform: scale(1.05);
+}
+
+/* 快速操作按钮 */
+.quick-actions {
+  padding: 24px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.quick-actions .ant-space {
+  width: 100%;
+}
+
+.quick-actions .ant-btn {
+  border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.quick-actions .ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.quick-actions .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.quick-actions .ant-btn-default {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #64748b;
+}
+
+.quick-actions .ant-btn-default:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.quick-actions .ant-btn-danger {
+  background: #ffffff;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.quick-actions .ant-btn-danger:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* ========== 图书信息卡片 - 现代化设计 ========== */
+.book-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.book-info-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* 图书标题区域 */
+.book-header {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.book-header::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.book-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 12px !important;
+  letter-spacing: -0.02em;
+}
+
+.book-author {
+  font-size: 18px;
+  font-weight: 500;
+  color: #667eea;
+  margin-bottom: 0 !important;
+}
+
+/* 图书元信息 */
+.book-meta {
+  margin: 24px 0;
+}
+
+.book-meta .ant-space {
+  flex-wrap: wrap;
+}
+
+.book-meta .ant-typography {
+  font-size: 15px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.book-meta .anticon {
+  color: #667eea;
+  font-size: 16px;
+}
+
+/* ========== 评分区域 - 视觉升级 ========== */
+.rating-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.rating-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.rating-overview .ant-statistic {
+  text-align: center;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.rating-overview .ant-statistic-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.rating-overview .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.rating-overview .ant-statistic-content-value {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.rating-display .ant-rate {
+  font-size: 24px;
+}
+
+.rating-display .ant-typography {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ========== 评分分布图表 - 精致设计 ========== */
+.rating-distribution {
+  margin-top: 32px;
+}
+
+.rating-distribution h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-distribution h5::before {
+  content: '📊';
+  font-size: 20px;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.rating-bar:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  transform: translateX(4px);
+}
+
+.rating-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+  font-weight: 600;
+}
+
+.rating-label .ant-rate {
+  font-size: 16px;
+}
+
+.rating-label .ant-typography {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.rating-progress {
+  flex: 1;
+  height: 12px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rating-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  opacity: 0.1;
+}
+
+.rating-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rating-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.rating-count {
+  min-width: 100px;
+  text-align: right;
+}
+
+.rating-count .ant-typography {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.rating-count .ant-typography-secondary {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+/* ========== 读者画像卡片 - 数据可视化 ========== */
+.reader-analytics-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reader-analytics-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgba(102, 126, 234, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.reader-analytics-card .ant-card-head {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 0;
+}
+
+.reader-analytics-card .ant-card-head-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reader-analytics-card .ant-card-body {
+  padding: 32px;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.analytics-item {
+  padding: 24px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.analytics-item:hover {
+  background: #ffffff;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.analytics-item h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.analytics-item h5 .anticon {
+  color: #667eea;
+  font-size: 18px;
+}
+
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.location-item:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.location-item .ant-typography {
+  margin: 0;
+  font-size: 14px;
+}
+
+.age-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.age-stats .ant-statistic {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.trend-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.trend-stats .ant-tag {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+}
+
+/* ========== 用户评论卡片 ========== */
+.reviews-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reviews-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgba(102, 126, 234, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.reviews-card .ant-card-head {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  border-radius: 0;
+}
+
+.reviews-card .ant-card-head-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reviews-card .ant-card-body {
+  padding: 32px;
+}
+
+.reviews-card .ant-list-item {
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.reviews-card .ant-list-item:hover {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.reviews-card .ant-list-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.review-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-header .ant-typography {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-rating .ant-rate {
+  font-size: 16px;
+}
+
+.review-rating .ant-typography {
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.review-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.review-meta .ant-typography {
+  font-size: 13px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-meta .anticon {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ========== 状态页面 ========== */
+.book-detail-loading,
+.book-detail-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  gap: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 32px;
+  border: 1px solid #e2e8f0;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.book-detail-loading .ant-spin {
+  font-size: 48px;
+}
+
+.book-detail-loading .ant-spin-dot i {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 1024px) {
+  .book-detail-main {
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+  }
+
+  .book-cover-section {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-detail-page {
+    padding: 0;
+  }
+
+  .book-detail-container {
+    padding: 0 16px 16px;
+  }
+
+  .book-detail-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .book-image-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .book-info-card,
+  .reader-analytics-card .ant-card-body,
+  .reviews-card .ant-card-body {
+    padding: 20px;
+  }
+
+  .book-title {
+    font-size: 24px;
+  }
+
+  .book-author {
+    font-size: 16px;
+  }
+
+  .rating-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions .ant-space {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-detail-container {
+    padding: 0 12px 12px;
+  }
+
+  .book-info-card,
+  .reader-analytics-card .ant-card-body,
+  .reviews-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .book-image-container {
+    padding: 20px 16px;
+  }
+
+  .quick-actions {
+    padding: 16px;
+  }
+
+  .book-title {
+    font-size: 20px;
+  }
+
+  .rating-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .rating-label {
+    min-width: 80px;
+  }
+
+  .rating-count {
+    min-width: 80px;
+  }
+}
+
+/* ========== 微交互动画 ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-info-card,
+.reader-analytics-card,
+.reviews-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.reader-analytics-card {
+  animation-delay: 0.1s;
+}
+
+.reviews-card {
+  animation-delay: 0.2s;
+}
+
+/* ========== 滚动条美化 ========== */
+.book-detail-page ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-detail-page ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.book-detail-page ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 4px;
+  border: 2px solid #f1f5f9;
+}
+
+.book-detail-page ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}

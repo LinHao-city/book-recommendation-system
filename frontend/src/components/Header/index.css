@@ -1,0 +1,251 @@
+.custom-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #722ed1, #531dab);
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.custom-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 24px;
+}
+
+/* Logo区域 */
+.custom-header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.custom-header-left:hover {
+  opacity: 0.8;
+}
+
+/* 覆盖所有可能的样式冲突 */
+.custom-header-left .custom-header-logo {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  border-radius: 8px;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* 确保logo图标也是白色 */
+.custom-header-logo .anticon {
+  color: white !important;
+}
+
+.custom-header-logo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* 强制覆盖任何可能的紫色背景 */
+.custom-header-left .custom-header-logo,
+.ant-header .custom-header-logo,
+.ant-layout-header .custom-header-logo {
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  background-color: #3b82f6 !important;
+}
+
+/* 最高优先级覆盖 - 使用属性选择器覆盖Ant Design的动态CSS */
+.custom-header-content .custom-header-left .custom-header-logo,
+.ant-layout-header.custom-header .custom-header-content .custom-header-left .custom-header-logo,
+header.custom-header .custom-header-content .custom-header-left .custom-header-logo,
+div[class*="custom-header-logo"] {
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  background-color: #3b82f6 !important;
+}
+
+/* 使用更具体的选择器 */
+.css-dev-only-do-not-override-1p9994x.custom-header .custom-header-content .custom-header-left .custom-header-logo {
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  background-color: #3b82f6 !important;
+}
+
+.custom-header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.custom-header-title .ant-typography {
+  line-height: 1.2;
+}
+
+/* 导航菜单 */
+.custom-header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-header-menu {
+  background: transparent;
+}
+
+.custom-header-menu .ant-menu-item {
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0 12px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.custom-header-menu .ant-menu-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.custom-header-menu .ant-menu-item-selected {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  font-weight: 600;
+}
+
+.custom-header-menu .ant-menu-item::after {
+  display: none;
+}
+
+/* 右侧用户区域 */
+.custom-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.custom-header-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-header-user:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.custom-header-username {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+/* 移动端菜单按钮 */
+.custom-header-mobile-menu-btn {
+  display: none !important;
+}
+
+.custom-header-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px 24px;
+}
+
+.custom-header-mobile-menu .ant-menu-item {
+  margin: 4px 0;
+  border-radius: 6px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .custom-header-content {
+    padding: 0 16px;
+  }
+
+  .custom-header-center {
+    display: none;
+  }
+
+  .custom-header-mobile-menu-btn {
+    display: inline-flex !important;
+  }
+
+  .custom-header-title .ant-typography {
+    font-size: 18px !important;
+  }
+
+  .custom-header-title .ant-typography-secondary {
+    display: none;
+  }
+
+  .custom-header-username {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-header-content {
+    padding: 0 12px;
+  }
+
+  .custom-header-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .custom-header-logo .anticon {
+    font-size: 20px !important;
+  }
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .custom-header {
+    background: rgba(20, 20, 20, 0.95);
+    border-bottom-color: #303030;
+  }
+
+  .custom-header-mobile-menu {
+    background: #141414;
+    border-bottom-color: #303030;
+  }
+
+  .custom-header-menu .ant-menu-item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .custom-header-menu .ant-menu-item:hover {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.2);
+  }
+
+  .custom-header-menu .ant-menu-item-selected {
+    color: #3b82f6 !important;
+    background: rgba(59, 130, 246, 0.2) !important;
+  }
+
+  .custom-header-user {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .custom-header-user:hover {
+    background: rgba(59, 130, 246, 0.2);
+  }
+
+  .custom-header-username {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}

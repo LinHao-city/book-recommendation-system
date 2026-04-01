@@ -1,0 +1,316 @@
+.algorithm-selector {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.algorithm-selector--small {
+  padding: 16px;
+}
+
+.algorithm-selector--large {
+  padding: 24px;
+}
+
+.algorithm-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.algorithm-selector-title {
+  margin: 0 !important;
+  color: #333;
+}
+
+.algorithm-selector-radio-group {
+  width: 100%;
+}
+
+.algorithm-option {
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.algorithm-option:hover {
+  border-color: #d9d9d9;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.algorithm-option--selected {
+  border-color: #722ed1;
+  background: #f6f0ff;
+  box-shadow: 0 2px 8px rgba(114, 46, 209, 0.15);
+}
+
+.algorithm-option-radio {
+  width: 100%;
+}
+
+.algorithm-option-radio .ant-radio {
+  align-self: flex-start;
+  margin-top: 4px;
+  margin-right: 12px;
+}
+
+.algorithm-option-content {
+  width: 100%;
+}
+
+.algorithm-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.algorithm-option-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(114, 46, 209, 0.1);
+  border-radius: 6px;
+}
+
+.algorithm-option-name {
+  font-size: 16px;
+  color: #333;
+}
+
+.algorithm-option-description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.algorithm-option-info {
+  color: #999;
+  cursor: help;
+  font-size: 14px;
+}
+
+.algorithm-option-info:hover {
+  color: #722ed1;
+}
+
+.algorithm-option-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.algorithm-option-performance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.performance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.performance-item .ant-typography {
+  font-size: 12px;
+}
+
+/* 性能对比区域 */
+.algorithm-selector-comparison {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.algorithm-selector-comparison .ant-typography {
+  margin-bottom: 16px !important;
+  color: #333;
+}
+
+.performance-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comparison-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.metric-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-bar-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+}
+
+.metric-algorithm {
+  font-size: 12px;
+  color: #666;
+}
+
+.metric-value {
+  font-weight: 500;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .algorithm-selector-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .algorithm-option {
+    padding: 12px;
+  }
+
+  .algorithm-option-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .algorithm-option-performance {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .performance-item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .metric-bar-item {
+    grid-template-columns: 80px 1fr 50px;
+    gap: 8px;
+  }
+
+  .metric-algorithm {
+    font-size: 11px;
+  }
+
+  .metric-value {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .algorithm-option {
+    padding: 8px;
+  }
+
+  .algorithm-option-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .algorithm-option-name {
+    font-size: 14px;
+  }
+
+  .algorithm-option-description {
+    font-size: 12px;
+  }
+
+  .metric-bar-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .metric-algorithm,
+  .metric-value {
+    text-align: left;
+  }
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .algorithm-selector {
+    background-color: #1f1f1f;
+    border-color: #303030;
+  }
+
+  .algorithm-selector-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .algorithm-selector-header {
+    border-bottom-color: #303030;
+  }
+
+  .algorithm-option {
+    background-color: #262626;
+    border-color: #303030;
+  }
+
+  .algorithm-option:hover {
+    background-color: #2a2a2a;
+    border-color: #404040;
+  }
+
+  .algorithm-option--selected {
+    background-color: #1a1a2e;
+    border-color: #722ed1;
+  }
+
+  .algorithm-option-name {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .algorithm-option-description {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .algorithm-option-performance {
+    border-top-color: #303030;
+  }
+
+  .algorithm-selector-comparison {
+    border-top-color: #303030;
+  }
+
+  .metric-label {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .metric-algorithm {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .metric-value {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}

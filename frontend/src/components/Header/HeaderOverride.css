@@ -1,0 +1,84 @@
+/* Header样式覆盖 - 企业级UI设计 */
+
+/* 导航菜单文字颜色 - 现代企业级设计 */
+.custom-header-menu .ant-menu-item {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+  border-radius: 6px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid transparent !important;
+}
+
+.custom-header-menu .ant-menu-item:hover {
+  color: #ffffff !important;
+  background: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+.custom-header-menu .ant-menu-item-selected {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(29, 78, 216, 0.25) 100%) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* 导航菜单图标样式 */
+.custom-header-menu .ant-menu-item .anticon {
+  font-size: 16px !important;
+}
+
+/* 活跃状态的图标高亮 */
+.custom-header-menu .ant-menu-item-selected .anticon {
+  color: #60a5fa !important;
+}
+
+/* 下拉菜单样式 - 现代玻璃拟态设计 */
+.custom-header .ant-dropdown-menu {
+  background: rgba(30, 41, 59, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  WebkitBackdropFilter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25) !important;
+  padding: 8px !important;
+}
+
+.custom-header .ant-dropdown-menu .ant-dropdown-menu-item {
+  color: #e2e8f0 !important;
+  border-radius: 8px !important;
+  margin: 2px 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.custom-header .ant-dropdown-menu .ant-dropdown-menu-item:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.custom-header .ant-dropdown-menu .ant-dropdown-menu-item-selected {
+  background: rgba(59, 130, 246, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* 用户头像样式 */
+.custom-header .ant-avatar {
+  border: 2px solid rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+  .custom-header-center {
+    display: none !important;
+  }
+
+  .custom-header-left {
+    flex: 1;
+  }
+
+  .custom-header-right {
+    flex-shrink: 0;
+  }
+}

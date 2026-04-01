@@ -1,0 +1,264 @@
+/* 浮动设置面板容器 */
+.floating-settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 浮动设置面板 */
+.floating-settings-panel {
+  position: relative;
+  max-width: 400px;
+  width: 90vw;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 浮动设置卡片 */
+.floating-settings-card {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.floating-settings-card .ant-card-head {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.floating-settings-card .ant-card-head-title {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.floating-settings-card .ant-card-body {
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* 浮动设置头部 */
+.floating-settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.floating-settings-header .ant-btn {
+  color: #64748b;
+  border: none;
+  box-shadow: none;
+}
+
+.floating-settings-header .ant-btn:hover {
+  color: #1a202c;
+  background: #f8fafc;
+}
+
+/* 选中图书信息 */
+.selected-book-info {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+/* 自定义滑块样式 */
+.floating-settings-card .ant-slider {
+  margin: 16px 0 8px 0;
+}
+
+.floating-settings-card .ant-slider-track {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+.floating-settings-card .ant-slider-handle {
+  border: 2px solid #3b82f6;
+}
+
+/* Select 组件样式 */
+.floating-settings-card .ant-select {
+  width: 100%;
+}
+
+.floating-settings-card .ant-select-selector {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.floating-settings-card .ant-select-selector:hover {
+  border-color: #cbd5e1;
+}
+
+.floating-settings-card .ant-select-focused .ant-select-selector {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* 按钮样式 */
+.floating-settings-card .ant-btn-primary {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.floating-settings-card .ant-btn-primary:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.floating-settings-card .ant-btn:not(.ant-btn-primary) {
+  border-radius: 8px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.floating-settings-card .ant-btn:not(.ant-btn-primary):hover {
+  border-color: #cbd5e1;
+  color: #1a202c;
+}
+
+/* 标签样式 */
+.floating-settings-card .ant-tag {
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .floating-settings-panel {
+    width: 95vw;
+    margin: 20px;
+  }
+
+  .floating-settings-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .floating-settings-header .ant-typography {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-settings-panel {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .floating-settings-card {
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .floating-settings-card .ant-card-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .floating-settings-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .floating-settings-card {
+    background-color: #1f1f1f;
+    border-color: #303030;
+  }
+
+  .floating-settings-card .ant-card-head {
+    background: linear-gradient(135deg, #2a2a2a 0%, #262626 100%);
+    border-bottom-color: #303030;
+  }
+
+  .floating-settings-card .ant-card-head-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .floating-settings-card .ant-card-body {
+    background-color: #1f1f1f;
+  }
+
+  .selected-book-info {
+    background-color: #262626;
+    border-color: #303030;
+  }
+
+  .floating-settings-card .ant-select-selector {
+    background-color: #262626;
+    border-color: #303030;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .floating-settings-card .ant-select-selector:hover {
+    border-color: #404040;
+  }
+
+  .floating-settings-card .ant-select-focused .ant-select-selector {
+    border-color: #3b82f6;
+  }
+
+  .floating-settings-card .ant-btn:not(.ant-btn-primary) {
+    background-color: #262626;
+    border-color: #303030;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .floating-settings-card .ant-btn:not(.ant-btn-primary):hover {
+    border-color: #404040;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,68 @@
+.similarity-score {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.similarity-score-progress {
+  flex: 1;
+}
+
+.similarity-score-progress--small {
+  min-width: 60px;
+}
+
+.similarity-score-progress--medium {
+  min-width: 120px;
+}
+
+.similarity-score-progress--large {
+  min-width: 180px;
+}
+
+.similarity-score-level {
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* 自定义进度条样式 */
+.similarity-score-progress .ant-progress-bg {
+  transition: all 0.3s ease;
+}
+
+.similarity-score-progress .ant-progress-inner {
+  background: linear-gradient(90deg, #f0f0f0 0%, #e6e6e6 100%);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .similarity-score-progress--medium {
+    min-width: 100px;
+  }
+
+  .similarity-score-progress--large {
+    min-width: 140px;
+  }
+
+  .similarity-score-level .ant-typography {
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .similarity-score-progress--small {
+    min-width: 50px;
+  }
+
+  .similarity-score-progress--medium {
+    min-width: 80px;
+  }
+
+  .similarity-score-progress--large {
+    min-width: 100px;
+  }
+
+  .similarity-score-level .ant-typography {
+    font-size: 10px !important;
+  }
+}

@@ -1,0 +1,172 @@
+.compact-algorithm-selector {
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.compact-algorithm-selector .ant-card-body {
+  padding: 16px;
+}
+
+/* 算法选择器头部 */
+.algorithm-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.algorithm-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.algorithm-icon {
+  font-size: 18px;
+}
+
+.info-icon {
+  color: #8b5cf6;
+  cursor: help;
+  transition: color 0.3s ease;
+}
+
+.info-icon:hover {
+  color: #7c3aed;
+}
+
+/* 算法选项 */
+.algorithm-options {
+  width: 100%;
+}
+
+.algorithm-option {
+  width: 100%;
+  display: block;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.algorithm-option:last-child {
+  margin-bottom: 0;
+}
+
+.algorithm-option:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.algorithm-option.active {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.algorithm-option .ant-radio-button {
+  width: 100%;
+}
+
+.algorithm-option .ant-radio-button-wrapper {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  height: auto;
+  line-height: 1.4;
+}
+
+.algorithm-option .ant-radio-button-wrapper:not(:first-child)::before {
+  display: none;
+}
+
+.algorithm-option .ant-radio-button-wrapper-checked {
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.option-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.option-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #1a202c;
+  margin-bottom: 2px;
+}
+
+.option-description {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .compact-algorithm-selector .ant-card-body {
+    padding: 12px;
+  }
+
+  .algorithm-selector-header {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .algorithm-info .ant-typography {
+    font-size: 13px !important;
+  }
+
+  .option-content {
+    gap: 8px;
+  }
+
+  .option-name {
+    font-size: 13px;
+  }
+
+  .option-description {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .algorithm-selector-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .option-content {
+    gap: 6px;
+  }
+
+  .option-description {
+    display: none;
+  }
+}
