@@ -45,5 +45,10 @@ dist-ssr/
 Thumbs.db
 Desktop.ini
 
+# Large files (exceed GitHub 100MB limit)
+backend/models/*.pkl
+backend/models/*.joblib
+backend/book_recommendation.db
+
 # CodeBuddy
 .codebuddy/
